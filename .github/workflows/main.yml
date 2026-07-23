@@ -14,14 +14,13 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
 
-        - name:  Deploy Via SSH
+        - name: Deploy Via SSH
           uses: appleboy/ssh-action@master
           with:
-            host: 13.200.233.70
-            username: root
-            key: ${{ secrets.SSH_KEY }}
-            script: |
-             cd /root/nodejs-application-demo
-             git pull 
+           host: 13.200.233.70
+           username: root
+           key: ${{ secrets.SSH_KEY }}
+           script: |
+              cd /root/nodejs-application-demo
+              git pull origin main
              
-            
